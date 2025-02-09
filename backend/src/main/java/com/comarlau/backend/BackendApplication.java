@@ -13,16 +13,20 @@ import org.springframework.web.bind.annotation.RestController;
 public class BackendApplication {
     public static void main(String[] args) {
         SpringApplication.run(BackendApplication.class, args);
-        System.out.println("Hello Vlad!");
     }
 
     @GetMapping("/")
     public String hello() {
-        return "Hello home!";
+        return "COMARLAU.COM!";
+    }
+
+    @GetMapping("/c")
+    public String c() {
+        return "ccc!";
     }
 
     @GetMapping("/test")
     public String test() {
-        return "Hello alternative page!";
+        return "ssl!";
     }
 }
