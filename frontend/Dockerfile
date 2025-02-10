@@ -1,19 +1,20 @@
-# build static vite-react files
-FROM node:23-alpine
+FROM ubuntu:latest
 LABEL authors="vladcomarlau"
+
+FROM node:18-alpine AS build
 WORKDIR /app
-COPY package.json .
+# Copy package.json and package-lock.json (or yarn.lock)
+COPY package.json package-lock.json* ./
 RUN npm install
+# Copy the rest of the application code
 COPY . .
+# CREATE STATIC FILES
 RUN npm run build
 
-# server nginx
-FROM nginx:alpine
-RUN rm -rf /usr/share/nginx/html/* # delete nginx welcome page
-COPY /dist /usr/share/nginx/html
-#nginx are nginx.conf unde setezi portul
-COPY nginxConfig/default /etc/nginx/sites-enabled
-CMD ["/bin/sh", "-c", "sed -i 's/listen  .*/listen 8080;/g' /etc/nginx/conf.d/default.conf && exec nginx -g 'daemon off;'"]
-EXPOSE 8080
-# Expose port 3000 for NGINX
-#CMD ["nginx", "-g", "daemon off;"]
+# NGINX SERVER
+FROM nginx:stable-alpine
+RUN rm -rf /usr/share/nginx/html/*
+# COPY STATIC FILES
+COPY --from=build /app/build /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
