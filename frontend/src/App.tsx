@@ -1,26 +1,19 @@
 import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+import Home from "./pages/Home";
+import Info from "./pages/Info";
 
 function App() {
-  const logo: string = require("./logo.svg").default;
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          The other app.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          frontend
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter basename="/business-management">
+        <Routes>
+            <Route path="/" element={<Home/>} />
+            <Route path="/info" element={<Info/>} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
