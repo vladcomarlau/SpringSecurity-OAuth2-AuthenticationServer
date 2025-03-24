@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2025-02-10T02:29:22Z"
+  labels:
+    app: business-frontend
+  name: business-frontend-svc
+  namespace: default
+  resourceVersion: "80597"
+  uid: 6e7453db-9882-46fd-838f-cc2443232b15
+spec:
+  clusterIP: 10.43.197.59
+  clusterIPs:
+  - 10.43.197.59
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - nodePort: 32091
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: business-frontend
+  sessionAffinity: None
+  type: NodePort
