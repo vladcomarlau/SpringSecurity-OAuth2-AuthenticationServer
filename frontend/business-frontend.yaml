@@ -2,8 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: business-frontend
-  name: business-frontend
+    app: business-frontend #resursele gestionate
+  name: business-frontend #numele
   namespace: default
 spec:
   progressDeadlineSeconds: 600 #cate secunde pana e considerat un pod inactiv
