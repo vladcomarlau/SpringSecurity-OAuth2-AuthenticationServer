@@ -1,3 +1,3 @@
-# A.i. Powered Business Management Full-Stack Web App
+#Business Operations and Finance Suite
 
-WIP
+A full-stack web application designed to help small to medium-sized businesses track and manage their financial and operational performance.
