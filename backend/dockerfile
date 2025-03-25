@@ -10,7 +10,7 @@ RUN chmod +x gradlew && ./gradlew clean build --no-daemon
 
 FROM openjdk:21-jdk
 WORKDIR /backend
-COPY --from=builder /home/gradle/project/build/libs/*.jar app.jar
+COPY --from=builder /home/gradle/project/build/libs/*.jar /backend/
 #trebuie pus acelasi ca portul aplicatiei
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "app.jar"]
