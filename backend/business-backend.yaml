@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: business-backend #resursele gestionate
+  name: business-backend #numele
+  namespace: default
+spec:
+  progressDeadlineSeconds: 600 #cate secunde pana e considerat un pod inactiv
+  replicas: 1
+  revisionHistoryLimit: 10 #cate replicas sa mentina pt rollback
+  selector:
+    matchLabels:
+      app: business-backend #administreaza doar pods cu acest label
+  strategy:
+    rollingUpdate: #face update la poduri gradual / downtime minim
+      maxSurge: 25% #in timpul unui update pot fi cu 25% mai multe poduri
+      maxUnavailable: 25% #in timpul unui update pot fi maxim 25% poduri indisponibile
+    type: RollingUpdate
+  template: #template al podurilor
+    metadata:
+      labels:
+        app: business-backend
+    spec:
+      containers:
+      - image: registry.comarlau.com/business-backend:latest
+        imagePullPolicy: Always
+        name: business-backend #numele containerului
+        resources:
+          requests:
+            cpu: 200m
+            memory: 200Mi
+          limits:
+            cpu: 400m
+            memory: 300Mi
+        terminationMessagePath: /dev/termination-log #unde tine logurile de terminare
+        terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst #queries vor trce mai intai prin DNS al clusterului
+      restartPolicy: Always #daca pica reporneste mereu
+      schedulerName: default-scheduler
+      terminationGracePeriodSeconds: 30 #atat are timp sa se opreasca pana e oprit fortat
