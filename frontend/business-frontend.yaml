@@ -26,13 +26,6 @@ spec:
       - image: registry.comarlau.com/business-frontend:latest
         imagePullPolicy: Always
         name: business-frontend #numele containerului
-        resources:
-          requests:
-            cpu: 200m
-            memory: 200Mi
-          limits:
-            cpu: 400m
-            memory: 300Mi
         terminationMessagePath: /dev/termination-log #unde tine logurile de terminare
         terminationMessagePolicy: File
       dnsPolicy: ClusterFirst #queries vor trce mai intai prin DNS al clusterului
