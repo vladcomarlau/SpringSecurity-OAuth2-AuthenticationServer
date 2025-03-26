@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 @RestController
-@CrossOrigin(origins = "http://business-frontend-svc:8080", allowCredentials = "true")
+@CrossOrigin(origins = " https://comarlau.com/business-management", allowCredentials = "true")
 public class basicController {
     @GetMapping("/helloworld")
     public String hello() {
