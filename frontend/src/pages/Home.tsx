@@ -1,16 +1,25 @@
 import React from 'react';
+import { useState } from "react";
+import axios from 'axios';
 
 export default function Home() {
-    const [setVal, val] = React.useState('');
+    const [val, setVal] = useState("");
     const apiUrl = `http://business-backend-svc:8080`;
-    fetch(`${apiUrl}/helloworld`)
-        .then(response => response.json())
-        .then(data => setVal(data));
+
+    axios.get(apiUrl + "/helloworld", {
+    }).then((response) => {
+        setVal(response.data);
+    }).catch(function (error) {
+        console.log(error.message);
+    });
 
     return(
         <>
             Business Management Home webhook test
-            Backend response: {val}
+            <p>
+                Backend response: {val}
+            </p>
+
         </>
     )
 }
