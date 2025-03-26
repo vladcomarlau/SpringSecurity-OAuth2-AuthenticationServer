@@ -19,14 +19,4 @@ public class BackendApplication {
     public String hello() {
         return "COMARLAU.COM!";
     }
-
-    @GetMapping("/c")
-    public String c() {
-        return "ccc!";
-    }
-
-    @GetMapping("/test")
-    public String test() {
-        return "ssl!";
-    }
 }
