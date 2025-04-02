@@ -7,7 +7,7 @@ import Info from "./pages/Info";
 function App() {
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.REACT_APP_ROOT_URL}>
         <Routes>
             <Route path="/" element={<Home/>} />
             <Route path="/info" element={<Info/>} />
