@@ -8,7 +8,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
 
-    // This property can contain one or more origins separated by commas
     @Value("${app.allowed.origins}")
     private String[] allowedOrigins;
 

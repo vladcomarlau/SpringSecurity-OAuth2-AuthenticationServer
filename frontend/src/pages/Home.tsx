@@ -4,9 +4,8 @@ import axios from 'axios';
 
 export default function Home() {
     const [val, setVal] = useState("");
-    console.log(process.env.REACT_APP_API_URL);
 
-    axios.get("http://localhost:8080/helloworld", {
+    axios.get(process.env.REACT_APP_API_URL + "/helloworld", {
     }).then((response) => {
         setVal(response.data);
     }).catch(function (error) {
@@ -19,6 +18,7 @@ export default function Home() {
             <p>
                 Backend response: {val}
             </p>
+
         </>
     )
 }
