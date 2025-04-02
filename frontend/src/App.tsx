@@ -7,7 +7,7 @@ import Info from "./pages/Info";
 function App() {
   return (
     <>
-      <BrowserRouter basename="/business-management">
+      <BrowserRouter basename="/">
         <Routes>
             <Route path="/" element={<Home/>} />
             <Route path="/info" element={<Info/>} />

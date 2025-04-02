@@ -4,9 +4,9 @@ import axios from 'axios';
 
 export default function Home() {
     const [val, setVal] = useState("");
-    const apiUrl = `https://comarlau.com/business-management/api`;
+    console.log(process.env.REACT_APP_API_URL);
 
-    axios.get(apiUrl + "/helloworld", {
+    axios.get("http://localhost:8080/helloworld", {
     }).then((response) => {
         setVal(response.data);
     }).catch(function (error) {
@@ -19,7 +19,6 @@ export default function Home() {
             <p>
                 Backend response: {val}
             </p>
-
         </>
     )
 }

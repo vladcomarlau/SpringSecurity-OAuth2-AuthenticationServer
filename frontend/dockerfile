@@ -8,7 +8,7 @@ COPY package.json package-lock.json* ./
 RUN npm install
 # Copy the rest of the application code
 COPY . .
-# CREATE STATIC FILES
+# CREATE STATIC FILES    npm run build uses   .env.production
 RUN npm run build
 
 # NGINX SERVER
