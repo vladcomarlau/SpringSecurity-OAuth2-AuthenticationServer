@@ -4,7 +4,7 @@ import axios from 'axios';
 
 export default function Home() {
     const [val, setVal] = useState("");
-    const apiUrl = `https://business-backend-svc:8080`;
+    const apiUrl = `https://comarlau.com/business-management/api`;
 
     axios.get(apiUrl + "/helloworld", {
     }).then((response) => {
