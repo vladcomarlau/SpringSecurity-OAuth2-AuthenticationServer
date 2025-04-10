@@ -1,17 +1,19 @@
 package com.comarlau.backend;
 
+import com.comarlau.backend.model.MyClass;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.context.ApplicationContext;
 
 @SpringBootApplication(exclude = { SecurityAutoConfiguration.class })
-@RequestMapping("/")
-@RestController
 public class BackendApplication {
     public static void main(String[] args) {
-        SpringApplication.run(BackendApplication.class, args);
+        ApplicationContext context = SpringApplication.run(BackendApplication.class, args);
+        MyClass myClass = context.getBean(MyClass.class);
+        myClass.myMethod();
+        myClass.printInstance();
+        myClass.printInstance();
+        myClass.printInstance();
     }
 }
