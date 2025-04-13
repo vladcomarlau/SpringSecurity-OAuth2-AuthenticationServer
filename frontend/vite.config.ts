@@ -6,7 +6,7 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig(()=> {
     const basePath = process.env.VITE_BASE_URL;
     return {
-        base: '/business-management',
+        base: '/business-management/',
         plugins: [
             react(),
             tailwindcss(),
