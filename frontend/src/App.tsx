@@ -6,7 +6,7 @@ import Info from "./pages/Info";
 function App() {
   return (
     <>
-      <BrowserRouter basename={ import.meta.env.VITE_ROOT_URL}>
+      <BrowserRouter basename={import.meta.env.VITE_BASE_URL}>
         <Routes>
             <Route path="/" element={<Home/>} />
             <Route path="/info" element={<Info/>} />
