@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 @Component
 @Scope("prototype")
 public class MySecondClass {
-    public void myMethod() {
-        System.out.println("MySecondClass.myMethod");
+    public String myMethod() {
+        return "MySecondClass.myMethod";
     }
 }

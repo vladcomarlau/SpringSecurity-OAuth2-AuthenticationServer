@@ -9,8 +9,8 @@ public class MyClass {
     @Autowired
     private MySecondClass mySecondClass;
 
-    public void myMethod() {
-        mySecondClass.myMethod();
+    public String myMethod() {
+        return mySecondClass.myMethod();
     }
 
     @Lookup
@@ -18,8 +18,8 @@ public class MyClass {
         return null;
     }
 
-    public void printInstance() {
-        MySecondClass mySecondClass = getMySecondClass();
-        System.out.println(mySecondClass);
+    public MySecondClass printInstance() {
+        return getMySecondClass();
+
     }
 }
