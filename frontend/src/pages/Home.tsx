@@ -17,7 +17,6 @@ export default function Home() {
             <p>
                 Backend response: {val}
             </p>
-
         </>
     )
 }

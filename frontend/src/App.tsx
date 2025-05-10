@@ -5,13 +5,12 @@ import Info from "./pages/Info";
 import Login from "./pages/Login.tsx";
 
 function App() {
-    console.log(import.meta.env.VITE_BASE_URL);
     return (
             <BrowserRouter basename={import.meta.env.VITE_BASE_URL}>
                 <Routes>
                     <Route path="/" element={<Home/>} />
-                    <Route path="/info" element={<Info/>} />
-                    <Route path="/login" element={<Login/>} />
+                    <Route path="/authorized/" element={<Info/>} />
+                    <Route path="/logged-out/" element={<Login/>} />
                 </Routes>
             </BrowserRouter>
     );

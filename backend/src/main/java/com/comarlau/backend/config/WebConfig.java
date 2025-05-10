@@ -11,8 +11,4 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 @Log4j2
 public class WebConfig {
 
-    @Value("${app.allowed.origin}")
-    private String allowedOrigin;
-
-
 }

@@ -1,0 +1,12 @@
+spring:
+   application.name: backend
+   security:
+      user:
+         name: admin
+         password: admin
+
+
+app.allowed.origin: https://comarlau.com/
+server.servlet.context-path: /business/api/
+
+
