@@ -3,8 +3,8 @@ spring:
 
   security:
     user:
-      name: "user"
-      password: "password"
+      name: "admin"
+      password: "admin"
       roles:
         - "USER"
     oauth2:
@@ -28,7 +28,6 @@ spring:
                 - "profile" #user info
             require-authorization-consent: true
 
-app.allowed.origin: http://localhost:5173
 server.servlet.context-path: /
 
 
