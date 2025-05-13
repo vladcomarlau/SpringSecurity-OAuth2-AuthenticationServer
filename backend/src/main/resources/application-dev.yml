@@ -10,53 +10,22 @@ spring:
     oauth2:
       authorizationserver:
         issuer: http://localhost:8080   #adresa serverului pt authorization
-        client:     #requesteri acceptati (client/frontend)
+        client:     #cu cine poate comunica auth server
+                    #mai multi pt separare de concerns
           login-client:
             registration:
               client-id: "login-client"
-              client-secret: "{noop}openid-connect"
+              client-secret: "{noop}openid-connect" #noop inseamna ca nu e encoded (pt dev)
               client-authentication-methods:
                 - "client_secret_basic"
               authorization-grant-types:
                 - "authorization_code"
-              redirect-uris: #unde e callback de redirect in frontend/client
+              redirect-uris: #redirect dupa login. Frontend treb sa le aiba
                 - "http://127.0.0.1:8080/login/oauth2/code/login-client"
                 - "http://127.0.0.1:8080/authorized"
-              scopes:
-                - "openid"
-                - "profile"
-            require-authorization-consent: true
-          login-client-with-messaging:
-            registration:
-              client-id: "login-client-with-messaging"
-              client-secret: "{noop}with-messages"
-              client-authentication-methods:
-                - "client_secret_basic"
-              authorization-grant-types:
-                - "authorization_code"
-              redirect-uris:
-                - "http://127.0.0.1:8080/login/oauth2/code/login-client-with-messaging"
-                - "http://127.0.0.1:8080/authorized"
-              scopes:
-                - "openid"
-                - "profile"
-                - "message:read"
-                - "message:write"
-            require-authorization-consent: true
-          messaging-client:
-            registration:
-              client-id: "messaging-client"
-              client-secret: "{noop}secret"
-              client-authentication-methods:
-                - "client_secret_basic"
-              authorization-grant-types:
-                - "authorization_code"
-                - "client_credentials" #util pt service-to-service (machine-to-machine)
-              redirect-uris:
-                - "http://127.0.0.1:8080/authorized"
-              scopes:
-                - "message:read"
-                - "message:write"
+              scopes: #permisiuni
+                - "openid" #autentificare
+                - "profile" #user info
             require-authorization-consent: true
 
 app.allowed.origin: http://localhost:5173
