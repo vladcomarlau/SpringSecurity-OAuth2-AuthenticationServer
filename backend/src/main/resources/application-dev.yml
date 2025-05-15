@@ -1,34 +1,6 @@
 spring:
   application.name: backend
-
-  security:
-    user:
-      name: "admin"
-      password: "admin"
-      roles:
-        - "USER"
-    oauth2:
-      authorizationserver:
-        issuer: http://localhost:8080   #adresa serverului pt authorization
-        client:     #cu cine poate comunica auth server
-                    #mai multi pt separare de concerns
-          login-client:
-            registration:
-              client-id: "login-client"
-              client-secret: "{noop}openid-connect" #noop inseamna ca nu e encoded (pt dev)
-              client-authentication-methods:
-                - "client_secret_basic"
-              authorization-grant-types:
-                - "authorization_code"
-              redirect-uris: #redirect dupa login. Frontend treb sa le aiba
-                - "http://127.0.0.1:8080/login/oauth2/code/login-client"
-                - "http://127.0.0.1:8080/authorized"
-              scopes: #permisiuni
-                - "openid" #autentificare
-                - "profile" #user info
-            require-authorization-consent: true
-
 server.servlet.context-path: /
-
+app.allowed.origin: http://localhost:5173
 
 
