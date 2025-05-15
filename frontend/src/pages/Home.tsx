@@ -1,5 +1,5 @@
 import {LoginButton} from "../components/LoginButton.tsx";
-import {LogoutButton} from "../components/Logout.tsx";
+import {LogoutButton} from "../components/LogoutButton.tsx";
 
 export default function Home() {
     return(
