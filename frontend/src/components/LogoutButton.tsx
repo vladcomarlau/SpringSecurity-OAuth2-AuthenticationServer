@@ -10,8 +10,8 @@ export const LogoutButton: React.FC = () => {
     };
 
     return (
-        <button onClick={handleLogout}>
+        <div className={"btn btn-neutral m-1"} onClick={handleLogout}>
             Sign Out
-        </button>
+        </div>
     );
 };

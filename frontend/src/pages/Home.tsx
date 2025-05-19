@@ -1,17 +1,21 @@
 import {LoginButton} from "../components/LoginButton.tsx";
-import {LogoutButton} from "../components/LogoutButton.tsx";
+import {useContext, useEffect, useState} from "react";
 
 export default function Home() {
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [username, setUsername] = useState("");
+
+
     return(
         <>
             Business Management Home
-            <div>
-                {`${import.meta.env.VITE_OIDC_ISSUER}/signin-callback`}
-            </div>
-            <div>
+            { isLoggedIn ?
+                <div>
+                    Welcome, {username}!
+                </div>
+                :
                 <LoginButton />
-                <LogoutButton />
-            </div>
+            }
         </>
     )
 }

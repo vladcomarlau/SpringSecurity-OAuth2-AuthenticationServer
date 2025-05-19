@@ -1,7 +1,7 @@
 import { userManager } from '../service/AuthService.tsx'
 
 export const LoginButton = () => (
-    <button onClick={() => userManager.signinRedirect()}>
+    <div className="btn btn-neutral m-1" onClick={() => userManager.signinRedirect()}>
         Log in
-    </button>
+    </div>
 )
