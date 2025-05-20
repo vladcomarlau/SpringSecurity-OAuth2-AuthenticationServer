@@ -13,10 +13,23 @@ function App() {
     const [user, setUser] = useState<User | null>(null);
 
     useEffect(() => {
-        userManager.getUser().then(user => {
-            setUser(user);
-            console.log("got user " + user);
+        userManager.getUser().then(storedUser => {
+            if (storedUser) {
+                setUser(storedUser);
+            } else {
+                userManager.signinSilent()
+                    .then(silentUser => setUser(silentUser));
+            }
         });
+
+        const onUserLoaded = (loadedUser: User) => {
+            setUser(loadedUser);
+        };
+
+        userManager.events.addUserLoaded(onUserLoaded);
+        return () => {
+            userManager.events.removeUserLoaded(onUserLoaded);
+        };
     }, []);
 
     return (
