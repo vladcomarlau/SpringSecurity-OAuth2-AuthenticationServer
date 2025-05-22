@@ -76,13 +76,17 @@ public class SecurityConfig {
     public SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http)
             throws Exception {
         http
-                .authorizeHttpRequests((authorize) -> authorize
-                        .anyRequest().authenticated()
-                )
-                // Form login handles the redirect to the login page from the
-                // authorization server filter chain
-                .formLogin(Customizer.withDefaults());
-
+                .formLogin(formLogin ->
+                        formLogin
+                                .loginPage("/login").permitAll()) //locatia custom form (din resources)
+                .authorizeHttpRequests((authorize) ->
+                        authorize
+                                .requestMatchers("/login", "/error", //neaparat trebuie error si login expuse fara auth
+                                        "/webjars/**", "/images/**", "/css/**",
+                                        "/assets/**", "/favicon.ico")
+                                        .permitAll()
+                                .anyRequest().authenticated()
+                );
         return http.build();
     }
 
