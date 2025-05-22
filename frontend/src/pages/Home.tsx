@@ -14,8 +14,11 @@ export default function Home() {
                 </div>
                 :
                 <LoginButton />
-
             }
+
+            { auth.isLoading && <div>Loading...</div>}
+
+            { auth.error && <div>Error: { auth.error.message }</div>}
         </div>
     )
 }
