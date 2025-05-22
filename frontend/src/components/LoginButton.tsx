@@ -1,7 +1,10 @@
-import { userManager } from '../service/AuthService.tsx'
+import {useAuth} from "react-oidc-context";
 
-export const LoginButton = () => (
-    <div className="btn btn-neutral m-1" onClick={() => userManager.signinRedirect()}>
-        Log in
-    </div>
-)
+export default function LoginButton() {
+    const auth = useAuth();
+    return(
+        <div className="btn btn-neutral m-1" onClick={() => void auth.signinRedirect()}>
+            Log in
+        </div>
+    )
+}
