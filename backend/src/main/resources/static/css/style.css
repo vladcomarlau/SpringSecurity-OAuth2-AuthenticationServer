@@ -1,0 +1,98 @@
+/* style.css */
+
+/* Basic reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Full-screen centered container */
+.login-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #74ABE2 0%, #5563DE 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 1rem;
+}
+
+/* Form card */
+.login-page .form {
+    background: #fff;
+    padding: 2.5rem 3rem;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 360px;
+    text-align: center;
+}
+
+/* Titles */
+.login-page .form h1 {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+.login-page .form h2 {
+    font-size: 1.125rem;
+    margin-bottom: 1.5rem;
+    color: #666;
+}
+
+/* Error messages */
+.login-page .form .error {
+    background: #ffdddd;
+    color: #d8000c;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+/* Inputs wrapper */
+.login-page .form .login-form div {
+    margin-bottom: 1rem;
+}
+
+/* Inputs */
+.login-page .form .login-form input[type="text"],
+.login-page .form .login-form input[type="password"] {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+.login-page .form .login-form input:focus {
+    border-color: #5563DE;
+    outline: none;
+}
+
+/* Submit button */
+.login-page .form .login-form .button {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: #5563DE;
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+.login-page .form .login-form .button:hover {
+    background: #4350b8;
+}
+.login-page .form .login-form .button:active {
+    transform: scale(0.98);
+}
+
+/* Footer text */
+.login-page .form p {
+    margin-top: 1.5rem;
+    font-size: 0.85rem;
+    color: #aaa;
+}
