@@ -5,6 +5,7 @@ export default function LangSwitcher() {
 
     const handleLanguageChange = (e: { target: { value: string | undefined; }; }) => {
         i18n.changeLanguage(e.target.value);
+        console.log(i18n.language);
     };
 
     return (

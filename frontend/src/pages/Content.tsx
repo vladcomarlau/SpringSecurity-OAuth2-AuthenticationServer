@@ -15,9 +15,8 @@ export default function Content() {
 
     return(
         <div>
-            <div className={"rounded-full bg-gray-200 p-1"}>
-                <MenuBar setPage={setPage}/>
-            </div>
+            <MenuBar setPage={setPage}/>
+
             <div className={"p-1 m-1"}>
                 {pages.get(currentPage)}
             </div>

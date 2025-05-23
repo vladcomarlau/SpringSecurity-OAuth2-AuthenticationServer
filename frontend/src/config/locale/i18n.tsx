@@ -5,8 +5,8 @@ import ro from '../../../locales/ro/common.json';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
 i18n
-    .use(LanguageDetector) // pt ca useState se intampla inainte sa se incarce resursele (din cauza OAuth redirects?)
-    .use(initReactI18next)
+    .use(LanguageDetector) // detectare localStorage inainte de montare a componentei
+    .use(initReactI18next) // leaga hook-uri (ex:useTranslation()) i18next cu react
     .init({
         resources: {
             en: { translation: en },
@@ -17,8 +17,8 @@ i18n
             escapeValue: false,
         },
         detection: {
-            order: ['localStorage', 'navigator'],
-            caches: ['localStorage'],
+            order: ['localStorage', 'navigator'], //prioritizeaza scanarea localStorage
+            caches: ['localStorage'], //pastreaza in cache ce gaseste in localStorage
         },
         react: { useSuspense: false },
     });

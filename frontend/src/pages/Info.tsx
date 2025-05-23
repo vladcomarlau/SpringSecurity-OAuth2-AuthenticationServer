@@ -1,10 +1,11 @@
-import {t} from "i18next";
+import {useTranslation} from "react-i18next";
 
 export default function Info() {
+    const { t } = useTranslation();
 
     return(
         <>
-            {t('infoTitle')}
+            <div className={"text-xl font-bold"}>{t('title.info')}</div>
         </>
     )
 }

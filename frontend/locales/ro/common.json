@@ -1,10 +1,20 @@
 {
-  "welcome": "Bine ai venit",
-  "homeTitle": "Operațiuni de afaceri și finanțe",
-  "loginButton": "Conectare",
-  "logoutButton": "Deconectare",
-  "loading": "Se încarcă...",
-  "error": "Eroare",
-  "profileTitle": "Profil",
-  "infoTitle": "Informații"
+  "message": {
+    "welcome": "Bine ai venit",
+    "loading": "Se încarcă..",
+    "error": "Eroare"
+  },
+  "title": {
+    "app": "Operațiuni și Finanțe",
+    "home": "Acasă",
+    "profile": "Profil",
+    "info": "Informații"
+  },
+  "button": {
+    "home": "Acasă",
+    "profile": "Profil",
+    "info": "Informații",
+    "logout": "Deconectare",
+    "login": "Autentificare"
+  }
 }

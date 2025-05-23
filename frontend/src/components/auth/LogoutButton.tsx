@@ -6,7 +6,7 @@ export default function LogoutButton() {
 
     return(
         <div className="btn btn-neutral m-1" onClick={() => void auth.signoutRedirect()}>
-            {t('logoutButton')}
+            {t('button.logout')}
         </div>
     )
 }

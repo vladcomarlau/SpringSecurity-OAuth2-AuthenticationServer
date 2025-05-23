@@ -1,10 +1,24 @@
 {
-  "welcome": "Welcome",
-  "homeTitle": "Business Operations and Finance",
-  "loginButton": "Log in",
-  "logoutButton": "Log out",
-  "loading": "Loading..",
-  "error": "Error",
-  "profileTitle": "Profile",
-  "infoTitle": "Info"
+  "message": {
+    "welcome": "Welcome",
+    "loading": "Loading..",
+    "error": "Error",
+    "sign": {
+      "in": "Signing in..",
+      "out": "Signing out.."
+    }
+  },
+  "title": {
+    "app": "Business Operations and Finance",
+    "home": "Home",
+    "profile": "Profile",
+    "info": "Info"
+  },
+  "button": {
+    "home": "Home",
+    "profile": "Profile",
+    "info": "Info",
+    "logout": "Log out",
+    "login": "Log in"
+  }
 }

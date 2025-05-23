@@ -1,14 +1,17 @@
 import {useAutoSignin} from "react-oidc-context";
 import LoginButton from "../components/auth/LoginButton.tsx";
-import {t} from "i18next";
 import Content from "./Content.tsx";
+import LangSwitcher from "../components/locales/LangSwitcher.tsx";
+import {useTranslation} from "react-i18next";
 
 export default function Home() {
     const { isLoading, isAuthenticated, error } = useAutoSignin({signinMethod: "signinRedirect"});
+    const { t } = useTranslation();
 
     return(
         <div>
-            <div className={"text-2xl font-bold"}>{t('homeTitle')}</div>
+            <LangSwitcher/>
+            <div className={"text-2xl font-bold"}>{t('title.app')}</div>
 
             { isAuthenticated ?
                 <div>
@@ -18,9 +21,9 @@ export default function Home() {
                 <LoginButton />
             }
 
-            { isLoading && <div>{t('loading')}</div>}
+            { isLoading && <div>{t('messages.loading')}</div>}
 
-            { error && <div>{t('error')}: { error.message }</div>}
+            { error && <div>{t('messages.error')}: { error.message }</div>}
         </div>
     )
 }
