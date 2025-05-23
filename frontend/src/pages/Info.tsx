@@ -1,9 +1,10 @@
+import {t} from "i18next";
 
 export default function Info() {
 
     return(
         <>
-            Business Management Info
+            {t('infoTitle')}
         </>
     )
 }

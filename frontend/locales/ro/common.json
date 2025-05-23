@@ -1,8 +1,10 @@
 {
-  "welcome": "Bine ați venit",
-  "title": "Operațiuni de Afaceri și Finanțe",
-  "loginButton": "Autentificare",
+  "welcome": "Bine ai venit",
+  "homeTitle": "Operațiuni de afaceri și finanțe",
+  "loginButton": "Conectare",
   "logoutButton": "Deconectare",
-  "loading": "Se încarcă..",
-  "error": "Eroare"
+  "loading": "Se încarcă...",
+  "error": "Eroare",
+  "profileTitle": "Profil",
+  "infoTitle": "Informații"
 }

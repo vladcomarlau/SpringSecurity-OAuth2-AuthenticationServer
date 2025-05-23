@@ -15,7 +15,6 @@ function App() {
                     <Route path="/signin-callback" element={<SigninCallback />} />
                     <Route path="/signout-callback" element={<SignoutCallback />} />
                     <Route path="/info" element={<Info />} />
-
                 </Routes>
             </BrowserRouter>
         </>

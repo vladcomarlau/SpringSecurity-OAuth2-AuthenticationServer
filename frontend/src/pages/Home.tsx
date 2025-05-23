@@ -1,23 +1,18 @@
-import {useAuth, useAutoSignin} from "react-oidc-context";
+import {useAutoSignin} from "react-oidc-context";
 import LoginButton from "../components/auth/LoginButton.tsx";
-import LogoutButton from "../components/auth/LogoutButton.tsx";
-import {useTranslation} from "react-i18next";
-import LangSwitcher from "../components/locale/LangSwitcher.tsx";
+import {t} from "i18next";
+import Content from "./Content.tsx";
 
 export default function Home() {
     const { isLoading, isAuthenticated, error } = useAutoSignin({signinMethod: "signinRedirect"});
-    const auth = useAuth();
-    const { t } = useTranslation();
+
     return(
         <div>
-            <LangSwitcher/>
-
-            {t('title')}
+            <div className={"text-2xl font-bold"}>{t('homeTitle')}</div>
 
             { isAuthenticated ?
-                <div >
-                    {t('welcome')}, { auth.user?.profile?.sub }!
-                    <LogoutButton />
+                <div>
+                    <Content/>
                 </div>
                 :
                 <LoginButton />
