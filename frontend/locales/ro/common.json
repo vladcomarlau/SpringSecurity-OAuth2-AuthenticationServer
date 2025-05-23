@@ -1,14 +1,19 @@
 {
   "message": {
-    "welcome": "Bine ai venit",
+    "welcome": "Bine ai venit, {{name}}!",
     "loading": "Se încarcă..",
-    "error": "Eroare"
+    "error": "Eroare",
+    "sign": {
+      "in": "Autentificare în curs..",
+      "out": "Deconectare în curs.."
+    }
   },
   "title": {
     "app": "Operațiuni și Finanțe",
     "home": "Acasă",
     "profile": "Profil",
-    "info": "Informații"
+    "info": "Informații",
+    "footer": "Comârlău Vlad-Constantin 2025"
   },
   "button": {
     "home": "Acasă",
@@ -16,5 +21,8 @@
     "info": "Informații",
     "logout": "Deconectare",
     "login": "Autentificare"
+  },
+  "field": {
+    "name": "Nume: {{name}}"
   }
 }

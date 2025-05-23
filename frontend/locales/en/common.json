@@ -1,6 +1,6 @@
 {
   "message": {
-    "welcome": "Welcome",
+    "welcome": "Welcome, {{name}}!",
     "loading": "Loading..",
     "error": "Error",
     "sign": {
@@ -12,7 +12,8 @@
     "app": "Business Operations and Finance",
     "home": "Home",
     "profile": "Profile",
-    "info": "Info"
+    "info": "Info",
+    "footer": "Comârlău Vlad-Constantin 2025"
   },
   "button": {
     "home": "Home",
@@ -20,5 +21,8 @@
     "info": "Info",
     "logout": "Log out",
     "login": "Log in"
+  },
+  "field": {
+    "name": "Name: {{name}}"
   }
 }

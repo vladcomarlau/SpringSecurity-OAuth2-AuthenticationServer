@@ -5,11 +5,12 @@ import {useTranslation} from "react-i18next";
 export default function Profile() {
     const auth = useAuth();
     const { t } = useTranslation();
+   const name = auth.user?.profile?.sub ?? 'there';
 
     return(
         <>
             <div className={"text-xl font-bold"}>{t('title.profile')}</div>
-            <div>{t('message.welcome')}, { auth.user?.profile?.sub }!</div>
+            <div>{t('field.name', {name})}</div>
             <LogoutButton />
         </>
     )
