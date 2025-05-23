@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" lang="en">
 <head>
-  <title>Please Log In</title>
+  <title th:text="#{title}">Title header</title>
   <link rel="stylesheet" th:href="@{/css/style.css}">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -9,23 +9,23 @@
 <body>
 <div class="login-page">
   <div class="form">
-    <h1>Business Operations and Finances</h1>
-    <div class="error" th:if="${param.error}">
-      Invalid username and password.
+    <h1 th:text="#{title}">Title</h1>
+    <div class="error" th:if="${param.error}" th:text="#{error.credentials.invalid}">
+      Credentials error
     </div>
-    <div class="error" th:if="${param.logout}">
-      You have been logged out.
+    <div class="error" th:if="${param.logout}" th:text="#{error.credentials.expired}">
+      Logged out error
     </div>
     <form class="login-form" th:action="@{/login}" method="post">
       <div>
-        <input type="text" id="username" name="username" placeholder="Username"/>
+        <input type="text" id="username" name="username" th:placeholder="#{placeholder.username}"/>
       </div>
       <div>
-        <input type="password" id="password" name="password" placeholder="Password"/>
+        <input type="password" id="password" name="password" th:placeholder="#{placeholder.password}"/>
       </div>
-      <input class="button" type="submit" value="Log in" />
+      <input class="button" type="submit" th:value="#{button.login}" />
     </form>
-    <p>Comârlău Vlad-Constantin 2025</p>
+    <p th:text="#{footer}">Footer</p>
   </div>
 </div>
 </body>
