@@ -1,11 +1,15 @@
 import LogoutButton from "../components/auth/LogoutButton.tsx";
 import {useAuth} from "react-oidc-context";
 import {useTranslation} from "react-i18next";
+import RedirectSetter from "../components/auth/RedirectSetter.tsx";
 
 export default function Profile() {
     const auth = useAuth();
     const { t } = useTranslation();
-   const name = auth.user?.profile?.sub ?? 'there';
+
+    RedirectSetter();
+
+    const name = auth.user?.profile?.sub ?? "";
 
     return(
         <>

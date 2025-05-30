@@ -8,7 +8,7 @@ export const oidcSettings: UserManagerSettings = {
     response_type: 'code',
     scope: 'openid profile',
     // PKCE is automatic in oidc-client-ts
-    metadata: { //aici sa fie potrivite cu .authorizationEndpoint("") setate in authServerSettings
+    metadata: { //aici sa fie potrivite cu .authorizationEndpoint("") setate in authServerSettings din backend
         issuer: import.meta.env.VITE_OIDC_ISSUER,
         authorization_endpoint: `${import.meta.env.VITE_OIDC_ISSUER}/oauth2/v1/authorize`,
         token_endpoint: `${import.meta.env.VITE_OIDC_ISSUER}/oauth2/v1/token`,

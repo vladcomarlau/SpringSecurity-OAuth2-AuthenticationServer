@@ -18,10 +18,13 @@
     </div>
     <form class="login-form" th:action="@{/login}" method="post">
       <div>
-        <input type="text" id="username" name="username" th:placeholder="#{placeholder.username}"/>
+        <input type="text" id="username" name="username"
+               th:placeholder="#{placeholder.username}"
+               autofocus/>
       </div>
       <div>
-        <input type="password" id="password" name="password" th:placeholder="#{placeholder.password}"/>
+        <input type="password" id="password" name="password"
+               th:placeholder="#{placeholder.password}"/>
       </div>
       <input class="button" type="submit" th:value="#{button.login}" />
     </form>

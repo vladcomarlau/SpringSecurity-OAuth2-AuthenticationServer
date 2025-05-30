@@ -2,10 +2,14 @@
   "message": {
     "welcome": "Bine ai venit, {{name}}!",
     "loading": "Se încarcă..",
-    "error": "Eroare",
+    "error": {
+      "simple": "Eroare",
+      "page": "Pagina pe care o cauți nu există"
+    },
     "sign": {
       "in": "Autentificare în curs..",
-      "out": "Deconectare în curs.."
+      "out": "Deconectare în curs..",
+      "redirect": "Redirectionare catre autentificare.."
     }
   },
   "title": {

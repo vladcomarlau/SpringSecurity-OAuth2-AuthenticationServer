@@ -9,8 +9,10 @@ export default function SigninCallback() {
     const { t } = useTranslation();
 
     useEffect(() => {
+        const url = localStorage.getItem('redirectUrl');
+
         if (auth.isAuthenticated) {
-            navigate("/", { replace: true });
+            navigate(url ?? "/", { replace: true });
         }
         if (auth.error) {
             navigate("/", { replace: true });

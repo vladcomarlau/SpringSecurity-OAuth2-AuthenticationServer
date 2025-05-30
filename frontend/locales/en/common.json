@@ -2,10 +2,14 @@
   "message": {
     "welcome": "Welcome, {{name}}!",
     "loading": "Loading..",
-    "error": "Error",
+    "error": {
+      "simple": "Error",
+      "page": "The page you are looking for does not exist."
+    },
     "sign": {
       "in": "Signing in..",
-      "out": "Signing out.."
+      "out": "Signing out..",
+      "redirect": "Redirecting to login.."
     }
   },
   "title": {
@@ -13,7 +17,8 @@
     "home": "Home",
     "profile": "Profile",
     "info": "Info",
-    "footer": "Comârlău Vlad-Constantin 2025"
+    "footer": "Comârlău Vlad-Constantin 2025",
+    "error": "Error 404: Page not found"
   },
   "button": {
     "home": "Home",
