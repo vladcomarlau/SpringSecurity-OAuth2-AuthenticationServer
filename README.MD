@@ -1,3 +1,3 @@
-# Business Operations and Finance Suite
+# SpringSecurity-OAuth2-AuthenticaitonServer
 
-A full stack web application designed to help small to medium-sized businesses track and manage their financial and operational performance using A.i.
+A full stack web app that configures Spring Security OAuth2 login with a dedicated authentication server.
